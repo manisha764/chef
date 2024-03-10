@@ -1,0 +1,40 @@
+chef
+
+https://community.chef.io/downloads/tools/workstation
+
+
+---
+driver:
+  name: docker
+  transport:
+    name: docker
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: exec
+    driver:
+      name: exec
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+
+
+
+
+> Chef generate cookbook admin
+>treec
+
+>chef gem install kitchen-docker
+>>kitchen create
+>kitchen list
+>kitchen converge
+>kitchen list
